@@ -2,7 +2,7 @@
 
 Holding repository for cognito trigger lambda function for rosa-authenticator in FedRAMP
 
-To trigger new releases, add and upload a new versioning tag.
+To trigger new releases, add and upload a new versioning tag (This is a 100% manual step; no automation is intended to do this particular step).
 
 ```
 # Example
