@@ -9,14 +9,6 @@ exports.handler = (event, context, callback) => {
 	event.response.autoVerifyPhone = false;
 	event.response.autoVerifyEmail = false;
 
-	// Verify that email is from the US government or Red Hat
-	var domain = event.request.userAttributes.email.split("@")[1];
-	if (/.*\.(gov|mil)$/.test(domain) || domain == "redhat.com") {
-		// Let user through and verify their email account
-		callback(null, event);
-	}
-
-	// Return error to Amazon Cognito
-	var error = new Error("Sign-up not allowed");
-	callback(error, event);
+	// Let user through and verify their email account
+	callback(null, event);
 };
