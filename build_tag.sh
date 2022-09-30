@@ -5,6 +5,11 @@ GIT_ORG=$(echo $GIT_URL|cut -d":" -f2|cut -d"/" -f1)
 GIT_REPO=$(echo $GIT_URL|cut -d"/" -f2|cut -d"." -f1)
 ZIP_NAME=CognitoPreSignupTrigger.zip
 
+if [[ -z "$TAG" ]]; then
+  echo "Doing nothing, push a tag to GitHub in order to trigger the release creation process."
+  exit 0
+fi
+
 generate_post_data() {
   cat << EOF
 {
