@@ -1,4 +1,5 @@
 #!/bin/bash
+
 TAG=$(echo $GIT_BRANCH|cut -d"/" -f3)
 GIT_ORG=$(echo $GIT_URL|cut -d":" -f2|cut -d"/" -f1)
 GIT_REPO=$(echo $GIT_URL|cut -d"/" -f2|cut -d"." -f1)
