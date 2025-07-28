@@ -1,7 +1,7 @@
-exports.handler = (event, context, callback) => {
+exports.handler = async (event, context) => {
 	// Bail if not a user self sign-up
 	if (event.triggerSource != "PreSignUp_SignUp") {
-		callback(null, event);
+		return event;
 	}
 
 	// Always disable auto-confirm of accounts
@@ -10,5 +10,5 @@ exports.handler = (event, context, callback) => {
 	event.response.autoVerifyEmail = false;
 
 	// Let user through and verify their email account
-	callback(null, event);
+	return event;
 };
